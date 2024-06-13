@@ -32,6 +32,10 @@ function mint(address _address, uint _value) public
     // burn function
 function burn(address _address, uint _value) public
 {
+/* It first checks if the _address has a balance greater than or equal to _value to prevent underflow.
+If the check passes, totalSupply is decreased by _value.
+The balance of _address is decreased by _value.
+*/
     if (balance[_address] >=_value){
     totalSupply -= _value;
     balance[_address] -= _value;
